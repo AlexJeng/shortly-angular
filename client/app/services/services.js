@@ -1,24 +1,8 @@
 angular.module('shortly.services', [])
 
-.factory('Shorten', function ($http) {
-  // Your code here
-  var addLink = function (links) {
-    return $http({
-      method:'POST',
-      url: '/api/links',
-      data: links
-    })
-    .then(function(resp){
-      return resp.data;
-    });
-  };
-
-  return {addLink: addLink};
-
-
-})
 
 .factory('Links', function ($http) {
+
   // Your code here
 
   var getLinks = function (links) {
@@ -32,7 +16,20 @@ angular.module('shortly.services', [])
     });
   };
 
-  return {getLinks: getLinks};
+  var addLink = function (links) {
+    return $http({
+      method:'POST',
+      url: '/api/links',
+      data: links
+    })
+    .then(function(resp){
+      return resp.data;
+    });
+  };
+
+  return {getLinks: getLinks,
+          addLink: addLink
+        };
 
 })
 .factory('Auth', function ($http, $location, $window) {
