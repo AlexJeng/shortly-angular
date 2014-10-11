@@ -8,5 +8,6 @@ angular.module('shortly.links', [])
         $scope.data.links = data;
       });
     }
+  $scope.pageTitle = 'Links';
   $scope.getLinks();
 });
