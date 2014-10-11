@@ -2,15 +2,19 @@
 <!-- Your code here -->
 <h1> {{ pageTitle }} </h1>
 
-<form name='shortenLinkForm' ng-submit='addLink()' novalidate>
-  <input type='url' ng-model='link.url' required>
+<form name='shortenLinkForm' ng-submit='shortenLinkForm.$valid && addLink()' novalidate>
+  <input type='url' ng-model='link.url' name='name' required>
   <button>shorten</button>
 </form>
-{{ link.data.title + link.data.visits}}
-<a ng-href= "{{ link.data.base_url + '/' + link.data.code }} ">{{ link.data.base_url + '/' + link.data.code }}</a>
-<!-- when successful add link was called, load that links info
 
-todo: make the anchor link only appear on addLink()-->
+<p ng-hide="shortenLinkForm.$valid">Not a valid url</p>
+
+
+{{ link.data.title + link.data.visits}}
+
+ <!-- when successful add link was called, load that links info
+      todo: make the anchor link only appear on addLink() -->
+<a ng-href= "{{ link.data.base_url + '/' + link.data.code }} ">{{ link.data.base_url + '/' + link.data.code }}</a>
 
 </div>
 

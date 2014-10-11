@@ -1,9 +1,10 @@
-<div id='signin'>
+<div id='signin' ng-controller = "AuthController">
   <h1>Sign In</h1>
-  <form name="signinForm" ng-submit='signin()'>
+  <form name="signinForm" ng-submit='signinForm.$valid &&signin()'>
     <input type='text'ng-model='user.username'>
     <input type="password" ng-model='user.password'>
     <button>signin</button>
   </form>
+   <p ng-hide="signinForm.$valid">Not a valid username or password</p>
   <a href="#/signup">Don't have an account? <strong>Signup</strong> ...</a>
 </div>
