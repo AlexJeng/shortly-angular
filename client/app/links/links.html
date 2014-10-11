@@ -2,10 +2,15 @@
   <!-- Your html here -->
 <h1> {{ pageTitle }} </h1>
 
+<form>
+
+Search: <input type='test' ng-model='searchBy'>
+
+</form>
 <ul>
 
 
-  <li ng-repeat="items in data.links | orderBy:'-visits'">
+  <li ng-repeat="items in data.links | orderBy:'-visits'  | filter: searchBy">
   {{items.url}}
     <b>Shortened Link:</b>
 
