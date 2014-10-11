@@ -29,10 +29,6 @@ angular.module('shortly.services', [])
     });
   };
 
-  console.log("OMG DATA",  {
-    getLinks: getLinks,
-    addLink: addLink
-  });
 
   return {
     getLinks: getLinks,

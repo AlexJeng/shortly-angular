@@ -4,7 +4,6 @@ angular.module('shortly.shorten', [])
   // Your code here
   $scope.link = {};
 
-
   $scope.pageTitle = 'Shorten';
 
   $scope.addLink = function(){
@@ -13,5 +12,6 @@ angular.module('shortly.shorten', [])
       $scope.link.data = data;
     });
   };
+
 
 });
