@@ -1,6 +1,17 @@
-<div id='container'>
+<div id='container' ng-controller = "ShortenController">
 <!-- Your code here -->
 <h1> {{ pageTitle }} </h1>
+
+<form name='shortenLinkForm' ng-submit='addLink()' novalidate>
+  <input type='url' ng-model='link.url' required>
+  <button>shorten</button>
+</form>
+{{ link.data.title + link.data.visits}}
+<a ng-href= "{{ link.data.base_url + '/' + link.data.code }} ">{{ link.data.base_url + '/' + link.data.code }}</a>
+<!-- when successful add link was called, load that links info
+
+todo: make the anchor link only appear on addLink()-->
+
 </div>
 
 

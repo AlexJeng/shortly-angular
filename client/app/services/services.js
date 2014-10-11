@@ -23,13 +23,21 @@ angular.module('shortly.services', [])
       data: links
     })
     .then(function(resp){
+      console.log("RESDATA", resp.data);
       return resp.data;
+
     });
   };
 
-  return {getLinks: getLinks,
-          addLink: addLink
-        };
+  console.log("OMG DATA",  {
+    getLinks: getLinks,
+    addLink: addLink
+  });
+
+  return {
+    getLinks: getLinks,
+    addLink: addLink
+  };
 
 })
 .factory('Auth', function ($http, $location, $window) {
